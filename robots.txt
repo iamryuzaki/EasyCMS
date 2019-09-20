@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /engine/
+Disallow: /app/configs/
+Disallow: /app/plugins/
+Disallow: /app/controllers/

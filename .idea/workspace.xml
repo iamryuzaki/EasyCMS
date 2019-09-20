@@ -2,6 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9c03ad57-584e-4e99-8ee8-2a1c3053ff30" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/configs/route.secure.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/controllers/index/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/plugins/SentryIO/SentryIO.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/templates/default/init.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/templates/default/template.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/robots.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/engine/bootstrap.php" beforeDir="false" afterPath="$PROJECT_DIR$/engine/bootstrap.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/engine/library/PluginManager/PluginManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/engine/library/PluginManager/PluginManager.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,11 +27,18 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1QxASkxahHjYt0xcJMVgkCljEun" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="F:/Downloads/php-7.4.0beta2-nts-Win32-vs16-x64/php.exe" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/controllers/index" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -51,6 +66,7 @@
       <workItem from="1568749334925" duration="625000" />
       <workItem from="1568784687986" duration="599000" />
       <workItem from="1568963572075" duration="15174000" />
+      <workItem from="1568992799844" duration="2318000" />
     </task>
     <servers />
   </component>
@@ -62,7 +78,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

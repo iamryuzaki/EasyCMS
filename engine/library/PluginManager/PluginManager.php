@@ -2,7 +2,7 @@
 
 class PluginManager
 {
-    private static array $LoadedPlugins = [];
+    private static $LoadedPlugins = [];
 
     public static function Init(): bool
     {

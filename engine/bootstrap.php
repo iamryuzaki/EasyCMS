@@ -2,7 +2,7 @@
 
 class Bootstrap
 {
-    private static array $LoadedLibrary = [];
+    private static $LoadedLibrary = [];
 
     public static function HasLoadedLibrary(string $name): bool
     {

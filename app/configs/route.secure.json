@@ -1,0 +1,12 @@
+[
+  {
+    "path": "/",
+    "template": "default",
+    "controller": "/index/index.php"
+  },
+  {
+    "path": "/index.html",
+    "redirect": "/",
+    "code": 301
+  }
+]
