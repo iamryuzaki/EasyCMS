@@ -58,6 +58,6 @@ class PluginManager
 
     public static function GetRepositoryPlugins(string $repoUrl): array
     {
-
+        $apiUrl = 'https://api.github.com/repos/' . $repoUrl . '/contents/';
     }
 }
