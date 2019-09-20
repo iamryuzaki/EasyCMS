@@ -1,0 +1,14 @@
+{
+    "SentryIO": {
+        "title": "SentryIO - Error Reporter",
+        "author": "TheRyuzaki",
+        "version": "1.0.0",
+        "status": true
+    },
+    "DemoPlugin": {
+        "title": "DemoPlugin",
+        "author": "TheRyuzaki",
+        "version": "0.0.1",
+        "status": true
+    }
+}

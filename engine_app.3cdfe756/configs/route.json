@@ -1,0 +1,14 @@
+[
+  {
+    "path": "/admincp",
+    "template": "admincp",
+    "controller": "/admincp/index/index.controller.php",
+    "view": "/admincp/index/index.view.php"
+  },
+  {
+    "path": "*",
+    "template": "error",
+    "controller": "/error/404.php",
+    "view": "/error/404.php"
+  }
+]

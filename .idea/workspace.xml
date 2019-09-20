@@ -2,15 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9c03ad57-584e-4e99-8ee8-2a1c3053ff30" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/configs/route.secure.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/index/index.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/plugins/SentryIO/SentryIO.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/templates/default/init.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/templates/default/template.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/robots.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app.3cdfe756/plugins/DemoPlugin/DemoPlugin.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/engine/library/Engine/Engine.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uninstall.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/configs/route.secure.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/index/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/plugins/SentryIO/SentryIO.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/default/init.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/default/template.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/engine/bootstrap.php" beforeDir="false" afterPath="$PROJECT_DIR$/engine/bootstrap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/engine/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/engine/config.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/engine/library/PluginManager/PluginManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/engine/library/PluginManager/PluginManager.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/install.php" beforeDir="false" afterPath="$PROJECT_DIR$/install.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,9 +39,12 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="F:/Downloads/php-7.4.0beta2-nts-Win32-vs16-x64/php.exe" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/engine_app" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="H:\VS Code\EasyCMS\engine_app" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/controllers/index" />
     </key>
