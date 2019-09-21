@@ -69,7 +69,7 @@ class Bootstrap
                     include_once __DIR__ . '/library/' . $name . '/' . $name . '.php';
                     self::$LoadedLibrary[$name] = true;
                     return true;
-                } catch (\Exception $ex) {
+                } catch (\Throwable $ex) {
                     self::OnExceptionReceived($ex);
                 }
             }
@@ -78,7 +78,7 @@ class Bootstrap
         return $result;
     }
 
-    public static function OnExceptionReceived(\Exception $ex)
+    public static function OnExceptionReceived(\Throwable $ex)
     {
         PluginManager::CallHook('OnExceptionReceived', [$ex]);
     }

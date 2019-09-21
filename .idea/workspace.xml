@@ -4,7 +4,7 @@
     <list default="true" id="9c03ad57-584e-4e99-8ee8-2a1c3053ff30" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.3cdfe756/configs/plugins.json" beforeDir="false" afterPath="$PROJECT_DIR$/app.3cdfe756/configs/plugins.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.3cdfe756/plugins/DemoPlugin/DemoPlugin.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.3cdfe756/plugins/DemoPlugin/DemoPlugin.json" beforeDir="false" afterPath="$PROJECT_DIR$/app.3cdfe756/plugins/DemoPlugin/DemoPlugin.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/engine/bootstrap.php" beforeDir="false" afterPath="$PROJECT_DIR$/engine/bootstrap.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/engine/library/PluginManager/PluginManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/engine/library/PluginManager/PluginManager.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
@@ -33,11 +33,11 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/engine_app" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="H:\VS Code\EasyCMS\engine_app" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/controllers/index" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="H:\VS Code\EasyCMS\engine_app" />
     </key>
   </component>
   <component name="RunDashboard">
