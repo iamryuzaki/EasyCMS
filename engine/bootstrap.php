@@ -59,11 +59,14 @@ class Bootstrap
     public static function DoLoadLibrary(string $name): bool
     {
         $result = false;
-        $hasOverride = PluginManager::CallHook('CanDoLoadLibrary', [&$result]);
+        $hasOverride = false;
+        if (class_exists('PluginManager')) {
+            $hasOverride = PluginManager::CallHook('CanDoLoadLibrary', [&$result]);
+        }
         if ($hasOverride == false) {
             if (self::HasLoadedLibrary($name) == false) {
                 try {
-                    require_once __DIR__ . '/library/' . $name . '/' . $name . '.php';
+                    include_once __DIR__ . '/library/' . $name . '/' . $name . '.php';
                     self::$LoadedLibrary[$name] = true;
                     return true;
                 } catch (\Exception $ex) {

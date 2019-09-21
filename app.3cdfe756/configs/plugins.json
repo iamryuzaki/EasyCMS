@@ -9,6 +9,6 @@
         "title": "DemoPlugin",
         "author": "TheRyuzaki",
         "version": "0.0.1",
-        "status": true
+        "status": false
     }
 }

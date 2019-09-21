@@ -2,21 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9c03ad57-584e-4e99-8ee8-2a1c3053ff30" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app.3cdfe756/plugins/DemoPlugin/DemoPlugin.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/engine/library/Engine/Engine.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uninstall.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/configs/route.secure.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/index/index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/plugins/SentryIO/SentryIO.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/default/init.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/default/template.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.3cdfe756/configs/plugins.json" beforeDir="false" afterPath="$PROJECT_DIR$/app.3cdfe756/configs/plugins.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.3cdfe756/plugins/DemoPlugin/DemoPlugin.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/engine/bootstrap.php" beforeDir="false" afterPath="$PROJECT_DIR$/engine/bootstrap.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/engine/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/engine/config.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/engine/library/PluginManager/PluginManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/engine/library/PluginManager/PluginManager.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/install.php" beforeDir="false" afterPath="$PROJECT_DIR$/install.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -76,6 +67,7 @@
       <workItem from="1568784687986" duration="599000" />
       <workItem from="1568963572075" duration="15174000" />
       <workItem from="1568992799844" duration="2318000" />
+      <workItem from="1569038016753" duration="10042000" />
     </task>
     <servers />
   </component>
