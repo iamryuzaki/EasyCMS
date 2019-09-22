@@ -21,7 +21,7 @@ class PluginManager
                                     self::$LoadedPlugins[$k] = $v;
                                 } else {
                                     unset($json[$k]);
-                                    file_put_contents($path, json_encode($json, JSON_PRETTY_PRINT));
+                                    file_put_contents($path, json_encode($json, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
                                 }
                             }
                         }
@@ -160,12 +160,21 @@ class PluginManager
                     $content = @file_get_contents($path);
                     if ($content) {
                         $json = json_decode($content, true);
-                        if (isset($json[$pluginName]) == false) {
-                            $json[$pluginName] = ['status' => false];
-                            file_put_contents($path, json_encode($json, JSON_PRETTY_PRINT));
-                        } else {
+                        $newStatusPlugin = false;
+                        if (isset($json[$pluginName]) == true) {
                             $hasUpdate = true;
+                            $newStatusPlugin = $json[$pluginName]['status'];
                         }
+
+                        if (is_file('./app.' . $GLOBALS['CONFIG']['APP_KEY'] . '/plugins/' . $pluginName . '/' . $pluginName . '.json')) {
+                            $content_plugin = file_get_contents('./app.' . $GLOBALS['CONFIG']['APP_KEY'] . '/plugins/' . $pluginName . '/' . $pluginName . '.json');
+                            $json_plugin = @json_decode($content_plugin, true) ?? [];
+                            $json[$pluginName] = $json_plugin;
+                            $json[$pluginName]['status'] = $newStatusPlugin;
+                        } else
+                            $json[$pluginName] = ['status' => $newStatusPlugin];
+                        file_put_contents($path, json_encode($json, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
+
                         $hasNoLoaded = false;
                         if (isset(self::$LoadedPlugins[$pluginName]) == false) {
                             $hasNoLoaded = true;
@@ -186,7 +195,8 @@ class PluginManager
         PluginManager::CallHook('OnDownloadPluginFinish', [&$repoUrl, &$pluginName]);
     }
 
-    public static function RemovePlugin(string $pluginName) {
+    public static function RemovePlugin(string $pluginName)
+    {
         $hasOverride = PluginManager::CallHook('CanRemovePlugin', [&$pluginName]);
         if ($hasOverride == false) {
             try {
@@ -196,7 +206,7 @@ class PluginManager
                     $json = json_decode($content, true);
                     if (isset($json[$pluginName])) {
                         unset($json[$pluginName]);
-                        file_put_contents($path, json_encode($json, JSON_PRETTY_PRINT));
+                        file_put_contents($path, json_encode($json, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
                     }
                 }
             } catch (\Throwable $ex) {

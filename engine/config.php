@@ -1,2 +1,2 @@
 <?php 
-$GLOBALS['CONFIG']['APP_KEY'] = '3cdfe756';
+$GLOBALS['CONFIG']['APP_KEY'] = 'secure';
