@@ -2,7 +2,8 @@
   {
     "path": "/",
     "template": "default",
-    "controller": "/index/index.php"
+    "controller": "/controllers/index/index.php",
+    "view": "/views/index/index.php"
   },
   {
     "path": "/index.html",
