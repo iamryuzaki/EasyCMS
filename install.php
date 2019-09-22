@@ -10,8 +10,10 @@ if (is_dir('./engine') == false) {
         header('Surrogate-Control: BigPipe/1.0');
         header("Cache-Control: no-cache, must-revalidate");
         header('X-Accel-Buffering: no');
+        ob_end_flush();
+        ob_start();
         echo '[' . date('H:i:s') . '] Downloading...';
-        flush();
+        ob_flush();
         $func = function (string $repoUrl, string $path, callable $func) {
             $apiUrl = 'https://api.github.com/repos/' . $repoUrl . '/contents' . $path;
             try {
@@ -32,13 +34,13 @@ if (is_dir('./engine') == false) {
                             if ($file_content) {
                                 file_put_contents('.' . $path . '/' . $item['name'], $file_content);
                                 echo PHP_EOL . '<br>[' . date('H:i:s') . '] File: ' . '.' . $path . '/' . $item['name'] . ', size: ' . $item['size'] . 'byte - <font color="gren">Loaded...</font>';
-                                flush();
+                                ob_flush();
                             }
                         } else {
                             if (is_dir('.' . $path . '/' . $item['name']) == false) {
                                 mkdir('.' . $path . '/' . $item['name']);
                                 echo PHP_EOL . '<br>[' . date('H:i:s') . '] Directory: ' . '.' . $path . '/' . $item['name'] . '/ - <font color="gren">Created...</font>';
-                                flush();
+                                ob_flush();
                             }
                             $func($repoUrl, $path . ($path != '/' ? '/' : '') . $item['name'], $func);
                         }
