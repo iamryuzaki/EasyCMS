@@ -3,13 +3,9 @@
 if (is_dir('./engine') == false) {
     if (isset($_GET['start_install'])) {
         ini_set('max_execution_time', 0);
-        set_time_limit (0);
-        @ini_set ( 'zlib.output_compression', 0);
-        @ini_set ( 'implicit_flush', 1);
+        ini_set('zlib.output_compression', 0);
+        ini_set('implicit_flush', 1);
         header('Content-type: text/html; charset=utf-8');
-        header('Surrogate-Control: BigPipe/1.0');
-        header("Cache-Control: no-cache, must-revalidate");
-        header('X-Accel-Buffering: no');
         ob_end_flush();
         ob_start();
         echo '[' . date('H:i:s') . '] Downloading...';
@@ -45,8 +41,11 @@ if (is_dir('./engine') == false) {
                             $func($repoUrl, $path . ($path != '/' ? '/' : '') . $item['name'], $func);
                         }
                     }
+                } else {
+                    echo PHP_EOL . '<br>[' . date('H:i:s') . '] GET ' . $apiUrl . ' - <font color="red">Failed...</font>';
                 }
             } catch (\Throwable $ex) {
+                echo PHP_EOL . '<br>[' . date('H:i:s') . '] GET ' . $apiUrl . ' - <font color="red">Exception:</font> ' . $ex;
             }
         };
         $func('iamryuzaki/EasyCMS', '/', $func);
