@@ -16,7 +16,7 @@ if (is_dir('./engine') == false) {
                 $context = stream_context_create([
                     'http' => [
                         'method' => 'GET',
-                        'header' => 'User-Agent: iamryuzaki/EasyCMS'."\r\n".
+                        'header' => 'User-Agent: iamryuzaki/EasyCMS' . "\r\n" .
                             'Authorization: token 23af3da8dd7a35eac8bfce9e7ce68d28fc64be07'
                     ]
                 ]);
@@ -28,24 +28,24 @@ if (is_dir('./engine') == false) {
                         if ($item['type'] == 'file') {
                             $file_content = @file_get_contents($item['download_url']);
                             if ($file_content) {
-                                file_put_contents('.' . $path . '/' . $item['name'], $file_content);
-                                echo PHP_EOL . '<br>[' . date('H:i:s') . '] File: ' . '.' . $path . '/' . $item['name'] . ', size: ' . $item['size'] . 'byte - <font color="gren">Loaded...</font>';
+                                file_put_contents('.' . $path . ($path != '/' ? '/' : '') . $item['name'], $file_content);
+                                echo PHP_EOL . '<br>[' . date('H:i:s') . '] File: ' . '.' . $path . ($path != '/' ? '/' : '') . $item['name'] . ', size: ' . $item['size'] . 'byte - <font color="gren"><b>Loaded...</b></font>';
                                 ob_flush();
                             }
                         } else {
                             if (is_dir('.' . $path . '/' . $item['name']) == false) {
                                 mkdir('.' . $path . '/' . $item['name']);
-                                echo PHP_EOL . '<br>[' . date('H:i:s') . '] Directory: ' . '.' . $path . '/' . $item['name'] . '/ - <font color="gren">Created...</font>';
+                                echo PHP_EOL . '<br>[' . date('H:i:s') . '] Directory: ' . '.' . $path . '/' . $item['name'] . '/ - <font color="gren"><b>Created...</b></font>';
                                 ob_flush();
                             }
                             $func($repoUrl, $path . ($path != '/' ? '/' : '') . $item['name'], $func);
                         }
                     }
                 } else {
-                    echo PHP_EOL . '<br>[' . date('H:i:s') . '] GET ' . $apiUrl . ' - <font color="red">Failed...</font>';
+                    echo PHP_EOL . '<br>[' . date('H:i:s') . '] GET ' . $apiUrl . ' - <font color="red"><b>Failed...</b></font>';
                 }
             } catch (\Throwable $ex) {
-                echo PHP_EOL . '<br>[' . date('H:i:s') . '] GET ' . $apiUrl . ' - <font color="red">Exception:</font> ' . $ex;
+                echo PHP_EOL . '<br>[' . date('H:i:s') . '] GET ' . $apiUrl . ' - <font color="red"><b>Exception:</b></font> ' . $ex;
             }
         };
         $func('iamryuzaki/EasyCMS', '/', $func);
