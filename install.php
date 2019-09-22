@@ -16,8 +16,8 @@ if (is_dir('./engine') == false) {
                 $context = stream_context_create([
                     'http' => [
                         'method' => 'GET',
-                        'header' => 'Cookie: logged_in=yes; dotcom_user=iamryuzaki' . "\r\n" .
-                            'User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132'
+                        'header' => 'User-Agent: iamryuzaki/EasyCMS'."\r\n".
+                            'Authorization: token 23af3da8dd7a35eac8bfce9e7ce68d28fc64be07'
                     ]
                 ]);
 
