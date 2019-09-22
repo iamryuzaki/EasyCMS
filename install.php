@@ -13,11 +13,11 @@ if (is_dir('./engine') == false) {
 
         try {
             file_put_contents('./EasyCMS.zip', fopen('https://github.com/iamryuzaki/EasyCMS/archive/master.zip', 'r'));
-            echo '[' . date('H:i:s') . '] Download has been completed, start unzip...';
+            echo PHP_EOL . '<br>[' . date('H:i:s') . '] Download has been completed, start unzip...';
 
             $zip = new ZipArchive;
             $zip->open('./EasyCMS.zip');
-            $zip->extractTo('./');
+            $zip->extractTo('./', array($zip->getNameIndex(0)['basename']));
             $zip->close();
         } catch (\Throwable $ex) {
         }
