@@ -10,46 +10,18 @@ if (is_dir('./engine') == false) {
         ob_start();
         echo '[' . date('H:i:s') . '] Downloading...';
         ob_flush();
-        $func = function (string $repoUrl, string $path, callable $func) {
-            $apiUrl = 'https://api.github.com/repos/' . $repoUrl . '/contents' . $path;
-            try {
-                $context = stream_context_create([
-                    'http' => [
-                        'method' => 'GET',
-                        'header' => 'User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 YaBrowser/19.9.2.228 Yowser/2.5 Safari/537.36' . "\r\n" .
-                            'Authorization: token 23af3da8dd7a35eac8bfce9e7ce68d28fc64be07' . "\r\n" .
-                            'Cookie: logged_in=yes; dotcom_user=iamryuzaki'
-                    ]
-                ]);
 
-                $content = @file_get_contents($apiUrl, false, $context);
-                if ($content) {
-                    $json = json_decode($content, true);
-                    foreach ($json as $item) {
-                        if ($item['type'] == 'file') {
-                            $file_content = @file_get_contents($item['download_url']);
-                            if ($file_content) {
-                                file_put_contents('.' . $path . ($path != '/' ? '/' : '') . $item['name'], $file_content);
-                                echo PHP_EOL . '<br>[' . date('H:i:s') . '] File: ' . '.' . $path . ($path != '/' ? '/' : '') . $item['name'] . ', size: ' . $item['size'] . 'byte - <font color="gren"><b>Loaded...</b></font>';
-                                ob_flush();
-                            }
-                        } else {
-                            if (is_dir('.' . $path . '/' . $item['name']) == false) {
-                                mkdir('.' . $path . '/' . $item['name']);
-                                echo PHP_EOL . '<br>[' . date('H:i:s') . '] Directory: ' . '.' . $path . '/' . $item['name'] . '/ - <font color="gren"><b>Created...</b></font>';
-                                ob_flush();
-                            }
-                            $func($repoUrl, $path . ($path != '/' ? '/' : '') . $item['name'], $func);
-                        }
-                    }
-                } else {
-                    echo PHP_EOL . '<br>[' . date('H:i:s') . '] GET ' . $apiUrl . ' - <font color="red"><b>Failed...</b></font>';
-                }
-            } catch (\Throwable $ex) {
-                echo PHP_EOL . '<br>[' . date('H:i:s') . '] GET ' . $apiUrl . ' - <font color="red"><b>Exception:</b></font> ' . $ex;
-            }
-        };
-        $func('iamryuzaki/EasyCMS', '/', $func);
+        try {
+            file_put_contents('./EasyCMS.zip', fopen('https://github.com/iamryuzaki/EasyCMS/archive/master.zip', 'r'));
+            echo '[' . date('H:i:s') . '] Download has been completed, start unzip...';
+
+            $zip = new ZipArchive;
+            $zip->open('./EasyCMS.zip');
+            $zip->extractTo('./');
+            $zip->close();
+        } catch (\Throwable $ex) {
+        }
+
         die(PHP_EOL . '<br>[' . date('H:i:s') . '] Downloading has been completed! <a href="/install.php">Next step</a>?');
     } else
         die('EasyCMS not found, <a href="?start_install">start install</a>?');
