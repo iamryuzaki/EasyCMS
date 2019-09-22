@@ -2,6 +2,7 @@
 
 if (is_dir('./engine') == false) {
     if (isset($_GET['start_install'])) {
+        ini_set('max_execution_time', 0);
         header('Content-type: text/html; charset=utf-8');
         header('Surrogate-Control: BigPipe/1.0');
         header("Cache-Control: no-cache, must-revalidate");
@@ -27,10 +28,14 @@ if (is_dir('./engine') == false) {
                             $file_content = @file_get_contents($item['download_url']);
                             if ($file_content) {
                                 file_put_contents('.' . $path . '/' . $item['name'], $file_content);
+                                echo PHP_EOL . '<br>[' . date('H:i:s') . '] File: ' . '.' . $path . '/' . $item['name'] . ', size: ' . $item['size'] . 'byte - <font color="gren">Loaded...</font>';
+                                flush();
                             }
                         } else {
                             if (is_dir('.' . $path . '/' . $item['name']) == false) {
                                 mkdir('.' . $path . '/' . $item['name']);
+                                echo PHP_EOL . '<br>[' . date('H:i:s') . '] Directory: ' . '.' . $path . '/' . $item['name'] . '/ - <font color="gren">Created...</font>';
+                                flush();
                             }
                             $func($repoUrl, $path . ($path != '/' ? '/' : '') . $item['name'], $func);
                         }
