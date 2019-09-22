@@ -2,7 +2,12 @@
 
 if (is_dir('./engine') == false) {
     if (isset($_GET['start_install'])) {
+        header('Content-type: text/html; charset=utf-8');
+        header('Surrogate-Control: BigPipe/1.0');
+        header("Cache-Control: no-cache, must-revalidate");
+        header('X-Accel-Buffering: no');
         echo '[' . date('H:i:s') . '] Downloading...';
+        flush();
         $func = function (string $repoUrl, string $path, callable $func) {
             $apiUrl = 'https://api.github.com/repos/' . $repoUrl . '/contents' . $path;
             try {
@@ -35,7 +40,7 @@ if (is_dir('./engine') == false) {
             }
         };
         $func('iamryuzaki/EasyCMS', '/', $func);
-        die(PHP_EOL . '<br>[' . date('H:i:s') . '] Downloading has been completed!');
+        die(PHP_EOL . '<br>[' . date('H:i:s') . '] Downloading has been completed! <a href="/install.php">Next step</a>?');
     } else
         die('EasyCMS not found, <a href="?start_install">start install</a>?');
 }
