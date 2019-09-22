@@ -17,12 +17,6 @@ class Engine
                         rename('./' . $node, './app.' . $newKey);
                     }
                 }
-                if (strlen($node) >= 10) {
-                    $appSubstr = substr($node, 0, 10);
-                    if ($appSubstr == 'engine_app') {
-                        rename('./' . $node, './engine_app.' . $newKey);
-                    }
-                }
             }
         }
 
@@ -40,12 +34,6 @@ class Engine
                     $appSubstr = substr($node, 0, 3);
                     if ($appSubstr == 'app') {
                         rename('./' . $node, './app');
-                    }
-                }
-                if (strlen($node) >= 10) {
-                    $appSubstr = substr($node, 0, 10);
-                    if ($appSubstr == 'engine_app') {
-                        rename('./' . $node, './engine_app');
                     }
                 }
             }
