@@ -30,7 +30,8 @@ if (is_dir('./engine') == false) {
                             rename('./' . $folderName . '/' . $item, './' . $item);
                         }
                     }
-                    @unlink('./' . $folderName);
+                    @rmdir('./' . $folderName);
+                    unlink('./EasyCMS.zip');
                 } else {
                     $zip->close();
                     echo PHP_EOL . '<br>[' . date('H:i:s') . '] Error unzip, archive is empty!';
